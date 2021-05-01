@@ -1,5 +1,6 @@
 import './style.css';
 import { Layer } from './Layer';
+import { Drink } from './Drink';
 
 // menu
 const navBtn = document.querySelector('.nav-btn');
@@ -17,21 +18,21 @@ for (let navLink of navLinks) {
 }
 
 // objednavani napoju
-const orderBtn = document.querySelector('.order-btn');
-const drinkCup = document.querySelector('.drink__cup');
-let ordered = true;
+// const orderBtn = document.querySelector('.order-btn');
+// const drinkCup = document.querySelector('.drink__cup');
+// let ordered = true;
 
-orderBtn.addEventListener('click', () => {
-  if (ordered) {
-    orderBtn.textContent = 'Zrušit';
-    drinkCup.classList.add('drink__cup--selected');
-    ordered = false; // musime zmenit hodnotu promenne
-  } else {
-    orderBtn.textContent = 'Objednat';
-    drinkCup.classList.remove('drink__cup--selected');
-    ordered = true;
-  }
-});
+// orderBtn.addEventListener('click', () => {
+//   if (ordered) {
+//     orderBtn.textContent = 'Zrušit';
+//     drinkCup.classList.add('drink__cup--selected');
+//     ordered = false; // musime zmenit hodnotu promenne
+//   } else {
+//     orderBtn.textContent = 'Objednat';
+//     drinkCup.classList.remove('drink__cup--selected');
+//     ordered = true;
+//   }
+// });
 
 // k komponente Layer
 const drinkInfo = document.querySelector('.drink__info');
@@ -51,7 +52,22 @@ const layers = [
   },
 ];
 
+const drink = {
+  id: 'romano',
+  name: 'Romano',
+  ordered: false,
+  layers: [
+    {
+      color: '#fbdf5b',
+      label: 'citrón',
+    },
+    {
+      color: '#613916',
+      label: 'espresso',
+    },
+  ],
+};
 
-for (let i = 0; i < layers.length; i++) {
-  drinkInfo.innerHTML += Layer(layers[i]);
-}
+const drinksList = document.querySelector('.drinks-list');
+drinksList.appendChild(Drink(drink));
+
