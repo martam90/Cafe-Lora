@@ -24,5 +24,19 @@ export const Drink = (props) => {
     <button class="order-btn">Objednat</button>
   </div> `;
 
+  const orderBtn = drinkElm.querySelector('.order-btn'); // hledame tlacitko v te komponente
+
+  orderBtn.addEventListener('click', () => {
+    const drinkCup = drinkElm.querySelector('.drink__cup');
+    if (props.ordered) {
+      orderBtn.textContent = 'Objednat';
+      drinkCup.classList.remove('drink__cup--selected');
+    } else {
+      orderBtn.textContent = 'Zrušit';
+      drinkCup.classList.add('drink__cup--selected');
+    }
+    props.ordered = !props.ordered;
+  });
+
   return drinkElm;
 };

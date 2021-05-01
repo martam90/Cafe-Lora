@@ -17,26 +17,6 @@ for (let navLink of navLinks) {
   });
 }
 
-// objednavani napoju
-// const orderBtn = document.querySelector('.order-btn');
-// const drinkCup = document.querySelector('.drink__cup');
-// let ordered = true;
-
-// orderBtn.addEventListener('click', () => {
-//   if (ordered) {
-//     orderBtn.textContent = 'Zrušit';
-//     drinkCup.classList.add('drink__cup--selected');
-//     ordered = false; // musime zmenit hodnotu promenne
-//   } else {
-//     orderBtn.textContent = 'Objednat';
-//     drinkCup.classList.remove('drink__cup--selected');
-//     ordered = true;
-//   }
-// });
-
-// k komponente Layer
-const drinkInfo = document.querySelector('.drink__info');
-
 const layers = [
   {
     color: '#feeeca',
@@ -51,6 +31,7 @@ const layers = [
     label: 'espresso',
   },
 ];
+
 
 const drink = {
   id: 'romano',
@@ -70,4 +51,3 @@ const drink = {
 
 const drinksList = document.querySelector('.drinks-list');
 drinksList.appendChild(Drink(drink));
-
