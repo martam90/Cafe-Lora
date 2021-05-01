@@ -28,14 +28,23 @@ export const Drink = (props) => {
 
   orderBtn.addEventListener('click', () => {
     const drinkCup = drinkElm.querySelector('.drink__cup');
-    if (props.ordered) {
+    props.ordered = !props.ordered;
+    if (props.ordered) { //ordered je true
+      orderBtn.textContent = 'Zrušit';
+      drinkCup.classList.add('drink__cup--selected');
+    } else {
+      orderBtn.textContent = 'Objednat';
+      drinkCup.classList.remove('drink__cup--selected');
+    }
+    /*if (props.ordered) { // ordered je true
+      props.ordered = false;
       orderBtn.textContent = 'Objednat';
       drinkCup.classList.remove('drink__cup--selected');
     } else {
+      props.ordered = true;
       orderBtn.textContent = 'Zrušit';
       drinkCup.classList.add('drink__cup--selected');
-    }
-    props.ordered = !props.ordered;
+    }*/
   });
 
   return drinkElm;
