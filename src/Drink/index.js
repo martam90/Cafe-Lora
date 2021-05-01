@@ -2,7 +2,7 @@ import { Layer } from '../Layer';
 import './style.css';
 
 export const Drink = (props) => {
-  let layersHtml = '';
+  let layersHtml = ''; // vytvorime si promenu do ktere ulozime komponentu Layer. Tu pak pouzijeme na radku 20
 
   for (let i = 0; i < props.layers.length; i++) {
     layersHtml += Layer(props.layers[i]); 
