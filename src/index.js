@@ -13,3 +13,20 @@ for (let navLink of navLinks) {
     nav.classList.add('nav-closed');
   });
 }
+
+const orderBtn = document.querySelector('.order-btn');
+const drinkCup = document.querySelector('.drink__cup');
+let ordered = true;
+
+orderBtn.addEventListener('click', () => {
+  if (ordered) {
+    orderBtn.textContent = 'Zrušit';
+    drinkCup.classList.add('drink__cup--selected');
+    ordered = false;
+  } else {
+    orderBtn.textContent = 'Objednat';
+    drinkCup.classList.remove('drink__cup--selected');
+    ordered = true;
+  }
+});
+
