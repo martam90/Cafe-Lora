@@ -17,77 +17,12 @@ for (let navLink of navLinks) {
   });
 }
 
-const layers = [
-  {
-    color: '#feeeca',
-    label: 'mléčná pěna',
-  },
-  {
-    color: '#fed7b0',
-    label: 'teplé mléko',
-  },
-  {
-    color: '#613916',
-    label: 'espresso',
-  },
-];
-
-
-const drink = {
-  id: 'romano',
-  name: 'Romano',
-  ordered: false,
-  layers: [
-    {
-      color: '#fbdf5b',
-      label: 'citrón',
-    },
-    {
-      color: '#613916',
-      label: 'espresso',
-    },
-  ],
-};
-
 const drinksList = document.querySelector('.drinks-list');
 
-const drinks = [
-  {
-    id: 'cappuccino',
-    name: 'Cappuccino',
-    ordered: false,
-    layers: [
-      {
-        color: '#feeeca',
-        label: 'mléčná pěna',
-      },
-      {
-        color: '#fed7b0',
-        label: 'teplé mléko',
-      },
-      {
-        color: '#613916',
-        label: 'espresso',
-      },
-    ],
-  },
-  {
-    id: 'romano',
-    name: 'Romano',
-    ordered: false,
-    layers: [
-      {
-        color: '#fbdf5b',
-        label: 'citrón',
-      },
-      {
-        color: '#613916',
-        label: 'espresso',
-      },
-    ],
-  },
-];
-
-for (let i = 0; i < drinks.length; i++) {
-  drinksList.appendChild(Drink(drinks[i]));
-}
+fetch('https://apps.kodim.cz/daweb/cafelora/api/drinks')
+.then((response) => response.json())
+.then((json) => {
+  json.forEach((drink) => {
+    drinksList.appendChild(Drink(drink));
+  });
+});
