@@ -36,7 +36,22 @@ orderBtn.addEventListener('click', () => {
 // k komponente Layer
 const drinkInfo = document.querySelector('.drink__info');
 
-drinkInfo.innerHTML += Layer({color: '#feeeca', label: 'mléčná pěna'});
-drinkInfo.innerHTML += Layer({color: '#fed7b0', label: 'teplé mléko'});
-drinkInfo.innerHTML += Layer({color: '#613916', label: 'espresso'});
+const layers = [
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  },
+  {
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  },
+  {
+    color: '#613916',
+    label: 'espresso',
+  },
+];
 
+
+for (let i = 0; i < layers.length; i++) {
+  drinkInfo.innerHTML += Layer(layers[i]);
+}
