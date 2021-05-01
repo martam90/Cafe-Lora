@@ -48,8 +48,10 @@ h3 {
 header {
   padding: 1rem 0 1rem 0;
   height: 5rem;
-
   background-color: #301a1a;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
 }
 
 .topbar {
