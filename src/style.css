@@ -140,15 +140,6 @@ nav a:hover {
   text-align: center;
 }
 
-.drink {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 0.5rem;
-  width: 100%;
-}
-
 .drinks-list {
   display: flex;
   flex-flow: row wrap;
